@@ -35,7 +35,7 @@ public class CreateDB {
         return resultSet.next();
     }
 
-    public static void main(String[] args) {
+    public static void connectToDB() {
         // Open a connection
 
         try(Connection connection = DriverManager.getConnection(DB_URL, USER, PASS);
@@ -48,10 +48,6 @@ public class CreateDB {
 
             if (!connection.isClosed()) {
                 System.out.println("Connection success!");
-            }
-            connection.close();
-            if (connection.isClosed()) {
-                System.out.println("Connection close!");
             }
 
        } catch (SQLException e) {
